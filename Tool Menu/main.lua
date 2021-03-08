@@ -169,6 +169,12 @@ function generate_all_tools()
 
     -- sort by index
     function by_index(a, b)
+        if a == nil then
+            return true
+        end
+        if b == nil then
+            return false
+        end
         return tonumber(a.index) < tonumber(b.index)
     end
     table.sort(all_tools, by_index)
