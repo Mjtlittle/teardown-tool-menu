@@ -1,0 +1,4 @@
+name = Tool Menu
+author = mjtlittle
+description = Easily switch tools with the 'q' key.
+tags = Tool, Gameplay
