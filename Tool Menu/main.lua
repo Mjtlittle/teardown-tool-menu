@@ -30,7 +30,7 @@ function get_tool_data(tool_id)
     local data = {
         id = tool_id,
         name = get_tool_key(tool_id, 'name'),
-        index = get_tool_key(tool_id, 'index'),
+        index = tonumber(get_tool_key(tool_id, 'index')),
         ammo = nil,
         favorite = false,
         enabled = true,
@@ -175,7 +175,7 @@ function generate_all_tools()
         if b == nil then
             return false
         end
-        return tonumber(a.index) < tonumber(b.index)
+        return a.index < b.index
     end
     table.sort(all_tools, by_index)
 end
