@@ -1,6 +1,8 @@
 local menu_key = 'q'
 local favorite_tools_reg = 'savegame.mod.favorites'
 local grid_width = 3
+local menu_padding = 25
+local scroll_sensitivity = 50
 local basegame_tool_ids = {
     'sledge',
     'spraycan',
@@ -19,6 +21,9 @@ function init()
     menu_opened_before = false
     all_tools = {}
     tool_instance = {}
+
+    recent_menu_height = 100
+    scroll_pos = 0
 end
 
 function get_tool_key(tool_id, k)
@@ -104,7 +109,33 @@ function load_favorite_tools()
     end
 end
 
-function tick(dt)
+function update(dt)
+
+    -- scrolling
+    if menu_open then
+
+        local new_scroll_pos = scroll_pos + InputValue("mousewheel") * scroll_sensitivity
+        local diff_height = recent_menu_height - UiHeight() + menu_padding * 2
+
+        -- prevent scrolling up
+        if new_scroll_pos > 0 then
+            new_scroll_pos = 0
+        end
+
+        -- prevent scrolling if menu to small
+        if diff_height < 0 then
+            new_scroll_pos = 0
+
+        -- prevent scrolling past the end
+        elseif new_scroll_pos < -diff_height then
+            new_scroll_pos = -diff_height
+        end
+
+        -- update scroll variable
+        scroll_pos = new_scroll_pos
+    end
+
+    -- toggle menu
     if InputPressed(menu_key) then
 
         -- when the menu is opened for the first time
@@ -118,6 +149,7 @@ function tick(dt)
         if not menu_open then
             generate_tool_instance()
             update_tool_data()
+            scroll_pos = 0
         end
 
         -- on menu close
@@ -147,6 +179,10 @@ function draw()
         local x0, y0, x1, y1 = UiSafeMargins()
         UiTranslate(x0, y0)
         UiWindow(x1-x0, y1-y0, true)
+
+        -- scrolling
+        UiTranslate(0, scroll_pos)
+
         draw_tool_menu()
     end
 end
@@ -203,15 +239,24 @@ function draw_tool_menu()
 
     local width = 700
 
-    UiTranslate(25, 25)
+    UiTranslate(menu_padding, menu_padding)
 
     -- all sections
     local dy
+    local last_height = 0
+
     dy = draw_tool_section('Favorite', tool_instance.favorite, width)
+    last_height = last_height + dy
+
     UiTranslate(0, dy)
     dy = draw_tool_section('Base Game', tool_instance.basegame, width)
+    last_height = last_height + dy
+
     UiTranslate(0, dy)
     dy = draw_tool_section('Modded', tool_instance.modded, width)
+    last_height = last_height + dy
+
+    recent_menu_height = last_height
 end
 
 function draw_tool_section(label, tools, width)

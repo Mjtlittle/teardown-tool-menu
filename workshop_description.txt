@@ -3,7 +3,17 @@ Easily switch tools with the 'q' key.
 Features Include:
 - Open a menu to equip any base game or modded tool
 - Favorite tools to easily find them at the top of the menu
-- Add or remove tools from your toolbelt (individually or in bulk)
+- Add or remove tools from your tool-belt (individually or in bulk)
 
 This project is open source on github:
 https://github.com/Mjtlittle/teardown-tool-menu
+
+Recent Changes:
+- Added scrolling, for when there is too many tools to show on screen at once
+- Attempts to fix the Nil Comparison problems
+
+Planned Changes:
+- Key remaping
+- Scrolling sensitivity
+
+Drop a comment below if you encounter problems. Be sure to include the gamemode/map and tools installed at the time.
