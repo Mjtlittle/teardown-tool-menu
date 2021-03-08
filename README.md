@@ -8,6 +8,10 @@ A mod for Teardown that lets you easily switch tools
 - Favorite tools to easily find them at the top of the menu
 - Add or remove tools from your toolbelt (individually or in bulk)
 
+## Usage
+
+Click the <kbd>q</kbd> key to toggle the tool menu in the upper-left corner.
+
 ## Screenshot
 
 ![](./screenshot.png)
