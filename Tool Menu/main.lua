@@ -109,7 +109,7 @@ function load_favorite_tools()
     end
 end
 
-function update(dt)
+function tick(dt)
 
     -- scrolling
     if menu_open then
