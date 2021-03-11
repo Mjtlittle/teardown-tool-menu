@@ -372,6 +372,7 @@ function draw_tool_button(tool, width, height)
                 SetString("game.player.tool", tool.id)
                 menu_open = false
                 set_tool_enabled(tool, true)
+                save_favorite_tools()
             end
         UiPop()
 
