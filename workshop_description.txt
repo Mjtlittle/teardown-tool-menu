@@ -10,11 +10,12 @@ https://github.com/Mjtlittle/teardown-tool-menu
 
 Recent Changes:
 - The nil comparison problem should be fixed now
+- Favorites should now save for good now
 - Fixed inability to open menu sometimes
 - Added scrolling, for when there is too many tools to show on screen at once
 
 Planned Changes:
-- Key remaping
+- Key remapping
 - Scrolling sensitivity
 
 Drop a comment below if you encounter problems. Be sure to include the gamemode/map and tools installed at the time.
