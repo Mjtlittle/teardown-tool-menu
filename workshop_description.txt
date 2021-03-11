@@ -9,8 +9,9 @@ This project is open source on github:
 https://github.com/Mjtlittle/teardown-tool-menu
 
 Recent Changes:
+- The nil comparison problem should be fixed now
+- Fixed inability to open menu sometimes
 - Added scrolling, for when there is too many tools to show on screen at once
-- Attempts to fix the Nil Comparison problems
 
 Planned Changes:
 - Key remaping

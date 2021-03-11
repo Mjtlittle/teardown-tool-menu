@@ -205,10 +205,10 @@ function generate_all_tools()
 
     -- sort by index
     function by_index(a, b)
-        if a == nil then
+        if a.index == nil then
             return true
         end
-        if b == nil then
+        if b.index == nil then
             return false
         end
         return a.index < b.index
