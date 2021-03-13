@@ -2,6 +2,8 @@
 
 A mod for Teardown that lets you easily switch tools
 
+**[Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=2418422455)**
+
 ## Features
 
 - Open a menu to equip any base game or modded tool
