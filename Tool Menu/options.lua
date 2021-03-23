@@ -36,7 +36,7 @@ function draw()
 			SetString(activate_key_reg, "q")
 		end
 		UiTranslate(220, 0)
-		if GetString("savegame.mod.menu_key") == "a" then
+		if GetString(activate_key_reg) == "a" then
 			UiPush()
 				UiColor(0.5, 1, 0.5, 0.2)
 				UiImageBox("ui/common/box-solid-6.png", 200, 40, 6, 6)
