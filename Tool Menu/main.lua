@@ -1,5 +1,6 @@
 local menu_key = 'q'
 local favorite_tools_reg = 'savegame.mod.favorites'
+local activate_key_reg = 'savegame.mod.activate_key'
 local grid_width = 3
 local menu_padding = 25
 local scroll_sensitivity = 50
@@ -25,8 +26,8 @@ function init()
     recent_menu_height = 100
     scroll_pos = 0
     
-    if HasKey('savegame.mod.menu_key') then
-        menu_key = GetString('savegame.mod.menu_key')
+    if HasKey(activate_key_reg) then
+        menu_key = GetString(activate_key_reg)
     end
 end
 

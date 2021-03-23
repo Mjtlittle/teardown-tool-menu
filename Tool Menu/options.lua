@@ -1,3 +1,5 @@
+local activate_key_reg = 'savegame.mod.activate_key'
+
 function draw()
 	UiTranslate(UiCenter(), 250)
 	UiAlign("center middle")
@@ -24,14 +26,14 @@ function draw()
 	UiButtonImageBox("ui/common/box-outline-6.png", 6, 6)
 	UiPush()
 		UiTranslate(-110, 0)
-		if GetString("savegame.mod.menu_key") == "q" then
+		if GetString(activate_key_reg) == "q" then
 			UiPush()
 				UiColor(0.5, 1, 0.5, 0.2)
 				UiImageBox("ui/common/box-solid-6.png", 200, 40, 6, 6)
 			UiPop()
 		end
 		if UiTextButton("QWERTY Keyboard", 200, 40) then
-			SetString("savegame.mod.menu_key", "q")
+			SetString(activate_key_reg, "q")
 		end
 		UiTranslate(220, 0)
 		if GetString("savegame.mod.menu_key") == "a" then
@@ -41,7 +43,7 @@ function draw()
 			UiPop()
 		end
 		if UiTextButton("AZERTY Keyboard", 200, 40) then
-			SetString("savegame.mod.menu_key", "a")
+			SetString(activate_key_reg, "a")
 		end
 	UiPop()
 	
