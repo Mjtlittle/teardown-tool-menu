@@ -24,6 +24,10 @@ function init()
 
     recent_menu_height = 100
     scroll_pos = 0
+    
+    if HasKey('savegame.mod.menu_key') then
+        menu_key = GetString('savegame.mod.menu_key')
+    end
 end
 
 function get_tool_key(tool_id, k)
