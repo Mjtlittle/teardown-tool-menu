@@ -14,7 +14,14 @@ local basegame_tool_ids = {
     'pipebomb',
     'gun',
     'bomb',
-    'rocket'
+    'rocket',
+    'leafblower',
+    'rifle',
+    'wire',
+    'booster',
+    'turbo',
+    'steroid',
+    'explosive'
 }
 
 function init()
