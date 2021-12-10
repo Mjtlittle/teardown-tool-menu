@@ -9,6 +9,7 @@ This project is open source on github:
 https://github.com/Mjtlittle/teardown-tool-menu
 
 Recent Changes:
+- Sharantan added the part 2 tools to the basegame category
 - Cyborger added the option to choose either the 'q' (QWERTY) or the 'a' (AZERTY) key
 - The nil comparison problem should be fixed now
 - Favorites should now save for good now
