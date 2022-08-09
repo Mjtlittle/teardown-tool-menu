@@ -113,11 +113,10 @@ function load_favorite_tools()
     local tool_ids = split(fav_string, ',')
 
     -- update the favorite status of the tools
-    for i, tool_id in ipairs(tool_ids) do
-        local index = tonumber(get_tool_key(tool_id, 'index'))
-        if tonumber(index) ~= nil then
-            all_tools[index].favorite = true
-        end
+    for i, tool in ipairs(all_tools) do
+        if table_contains(tool_ids, tool.id) then
+			all_tools[i].favorite = true
+		end
     end
 end
 
